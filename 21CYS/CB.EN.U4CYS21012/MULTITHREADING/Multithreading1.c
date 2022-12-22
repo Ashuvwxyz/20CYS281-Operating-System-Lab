@@ -11,22 +11,6 @@
 
 // printWelcomeMessage will be called when the Thread is created in the main function 
 // which takes string as an argument
-
-struct varadd
-{
-	int a;
-	int b;
-}add;
-
-void *addnumbers(struct *bro)
-{
-	int ans = 0;
-	ans += bro->a;
-	ans += bro -> b;
-	printf("The sum is %d\n",ans);
-	pthread_exit(NULL);
-}
-
 void *printWelcomeMessage(void *names) {
     
    sleep(2);    
@@ -40,7 +24,6 @@ int main () {
 
    // thread defintion
    pthread_t threads[6];
-   add add;
    
    // parameter to be passed to the called function - printWelcomeMessage
    char names[10][15] = {"Amritha","Praveen","Saurabh","Sangeetha","Lakshmy","Srinivasan","Ramaguru"};
@@ -61,11 +44,6 @@ int main () {
       }
       
    }
-   add.a = 3;
-   add.b = 5;
-   
-   printf("USING THREAD\n");
-   result = pthread_create(&threads[0],NULL,addnumbers,(struct *)add);
    
    // Exit the thread
    pthread_exit(NULL);
